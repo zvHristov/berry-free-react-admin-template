@@ -58,7 +58,7 @@ const AuthLogin = ({ ...others }) => {
   };
 
   const handleSubmit = async (values) => {
-    const predefinedUsername = 'admin';
+    const predefinedUsername = 'admin@admin.com';
     const predefinedPassword = 'password';
     if (values.email === predefinedUsername && values.password === predefinedPassword) {
       localStorage.setItem('isAuthenticated', 'true');
@@ -134,7 +134,7 @@ const AuthLogin = ({ ...others }) => {
         initialValues={{
           email: '',
           password: '',
-          submit: true
+          submit: false
         }}
         validationSchema={Yup.object().shape({
           email: Yup.string().max(255).required('User is required'),

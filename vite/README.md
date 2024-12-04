@@ -1,3 +1,10 @@
+## Documentation
+
+The authentication system implements the following flow:
+
+1. Login Verification
+ Checks credentials against predefined values: admin@admin.com and password
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
