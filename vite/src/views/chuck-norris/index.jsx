@@ -1,12 +1,10 @@
-// material-ui
-import Typography from '@mui/material/Typography';
-
-// project imports
+import { useEffect, useState } from 'react';
+import { fetcher } from 'utils/axios';
+// project imports //
 import MainCard from 'ui-component/cards/MainCard';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
-import { useEffect, useState } from 'react';
-import { fetcher } from 'utils/axios';
+
 
 
 // ==============================|| Jock PAGE ||============================== //
