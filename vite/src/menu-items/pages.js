@@ -1,38 +1,32 @@
 // assets
 import { IconKey } from '@tabler/icons-react';
-
+import DeblurIcon from '@mui/icons-material/Deblur';
 // constant
 const icons = {
-  IconKey
+  IconKey,
+  DeblurIcon
 };
 
 // ==============================|| EXTRA PAGES MENU ITEMS ||============================== //
 
 const pages = {
   id: 'pages',
-  title: 'Pages',
-  caption: 'Pages Caption',
+  title: 'Home',
+  caption: 'Hi, Welcome to Berry Free React Admin Template',
   type: 'group',
   children: [
     {
-      id: 'authentication',
-      title: 'Authentication',
+      id: 'chuck-norris',
+      title: 'chuck norris',
       type: 'collapse',
-      icon: icons.IconKey,
+      icon: icons.DeblurIcon,
 
       children: [
         {
-          id: 'login3',
-          title: 'Login',
+          id: 'chuck-norris',
+          title: 'Jocks',
           type: 'item',
-          url: '/pages/login/login3',
-          target: true
-        },
-        {
-          id: 'register3',
-          title: 'Register',
-          type: 'item',
-          url: '/pages/register/register3',
+          url: '/chuck-norris',
           target: true
         }
       ]
