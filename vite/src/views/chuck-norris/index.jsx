@@ -3,6 +3,12 @@ import Typography from '@mui/material/Typography';
 
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import { useEffect, useState } from 'react';
 import { fetcher } from 'utils/axios';
@@ -29,12 +35,20 @@ const JockPage = () => {
         };
         fetchData();
     }, []); 
-    console.log(joke, 'joke random');
+
     return (
         <MainCard title="Jock Card">
-          <Typography variant="body2">
-              Jock random
-          </Typography>
+          <CardHeader
+                avatar={
+                    <Avatar 
+                        alt={joke.value} 
+                        src={joke.icon_url}
+                        sx={{ width: 56, height: 56 }}
+                    />
+                }
+                title={joke.value}
+                subheader={joke.created_at}
+            />
         </MainCard>
       )
 };
