@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'; 
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -39,12 +40,15 @@ const AuthLogin = ({ ...others }) => {
   const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
   const customization = useSelector((state) => state.customization);
   const [checked, setChecked] = useState(true);
+  const navigate = useNavigate(); 
+
 
   const googleHandler = async () => {
     console.error('Login');
   };
 
   const [showPassword, setShowPassword] = useState(false);
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -52,6 +56,18 @@ const AuthLogin = ({ ...others }) => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  const handleSubmit = async (values) => {
+    const predefinedUsername = 'admin';
+    const predefinedPassword = 'password';
+    if (values.email === predefinedUsername && values.password === predefinedPassword) {
+      localStorage.setItem('isAuthenticated', 'true');
+      navigate('/');
+    } else {
+      alert('Invalid username or password');
+    }
+  };
+
 
   return (
     <>
@@ -118,12 +134,13 @@ const AuthLogin = ({ ...others }) => {
         initialValues={{
           email: '',
           password: '',
-          submit: null
+          submit: false
         }}
         validationSchema={Yup.object().shape({
-          email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
+          email: Yup.string().max(255).required('User is required'),
           password: Yup.string().max(255).required('Password is required')
         })}
+        onSubmit={handleSubmit}
       >
         {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
           <form noValidate onSubmit={handleSubmit} {...others}>

@@ -50,11 +50,12 @@ const ProfileSection = () => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [open, setOpen] = useState(false);
   /**
-   * anchorRef is used on different componets and specifying one type leads to other components throwing an error
+   * anchorRef is used on different components and specifying one type leads to other components throwing an error
    * */
   const anchorRef = useRef(null);
   const handleLogout = async () => {
-    console.log('Logout');
+    localStorage.removeItem('isAuthenticated');
+    navigate('/pages/login/login3');
   };
 
   const handleClose = (event) => {
