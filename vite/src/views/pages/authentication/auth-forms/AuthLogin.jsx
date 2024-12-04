@@ -134,7 +134,7 @@ const AuthLogin = ({ ...others }) => {
         initialValues={{
           email: '',
           password: '',
-          submit: false
+          submit: true
         }}
         validationSchema={Yup.object().shape({
           email: Yup.string().max(255).required('User is required'),

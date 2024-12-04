@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 // material-ui
 import AppBar from '@mui/material/AppBar';
@@ -60,9 +62,19 @@ const MainLayout = () => {
   // Handle left drawer
   const leftDrawerOpened = useSelector((state) => state.customization.opened);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleLeftDrawerToggle = () => {
     dispatch({ type: SET_MENU, opened: !leftDrawerOpened });
   };
+
+  useEffect(() => { 
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+
+    if (!isAuthenticated) {
+      navigate('/pages/login/login3');
+    }
+  }, [navigate]);
 
   return (
     <Box sx={{ display: 'flex' }}>
