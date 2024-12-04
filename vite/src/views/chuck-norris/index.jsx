@@ -4,12 +4,7 @@ import Typography from '@mui/material/Typography';
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-
 import { useEffect, useState } from 'react';
 import { fetcher } from 'utils/axios';
 
