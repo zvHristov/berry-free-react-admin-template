@@ -6,25 +6,21 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from '../../store/reducer';
-import JockPage from './index';
+import JockCategories from './index';
 import { fetcher } from '../../utils/fetcher';
 
 const store = createStore(reducer);
 jest.mock('axios'); 
 
-test('should fetch data successfully JockPage Page', async () => {
+test('should render JockCategories Page', async () => {
     //Arrange
     render(
         <MemoryRouter>
             <Provider store={store}>
-                <JockPage />
+                <JockCategories />
             </Provider>
         </MemoryRouter>
     );
-    //Act
-    await act(async () => {
-        axios.get.mockResolvedValueOnce('/jokes/random');
-        fetcher('/jokes/random');
-    });
-  
+   
+    expect(screen.getByText('Jock Categories List')).toBeInTheDocument();
 });

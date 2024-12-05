@@ -26,16 +26,18 @@ const JockCategories = () => {
     });
 
     const handlingCategory = async category => {
-        console.log(category, 'joke category');
         const response = await fetcher(`/jokes/random?category=${category}`);
-        console.log(response, 'response');
         setRandomCategory(response);
     };
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetcher(`/jokes/categories`);
-            setJockCategories(response);
+            try {
+                const response = await fetcher(`/jokes/categories`);
+                setJockCategories(response);
+            } catch (error) {
+                console.log(error, 'error');
+            }
         };
         fetchData();
     }, []); 

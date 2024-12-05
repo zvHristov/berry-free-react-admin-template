@@ -23,8 +23,12 @@ const JockPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetcher(`/jokes/random`);
-            setJoke(response);
+            try {
+                const response = await fetcher(`/jokes/random`);
+                setJoke(response);
+            } catch (error) {
+                console.log(error, 'error');
+            }
         };
         fetchData();
     }, []); 
