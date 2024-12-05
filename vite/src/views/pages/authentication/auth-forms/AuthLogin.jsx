@@ -151,6 +151,7 @@ const AuthLogin = ({ ...others }) => {
                 id="outlined-adornment-email-login"
                 type="email"
                 value={values.email}
+                data-testid="submit-login-email"
                 name="email"
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -170,6 +171,7 @@ const AuthLogin = ({ ...others }) => {
                 id="outlined-adornment-password-login"
                 type={showPassword ? 'text' : 'password'}
                 value={values.password}
+                data-testid="submit-login-password"
                 name="password"
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -214,7 +216,7 @@ const AuthLogin = ({ ...others }) => {
 
             <Box sx={{ mt: 2 }}>
               <AnimateButton>
-                <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="secondary">
+                <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" name="submit" variant="contained" color="secondary" data-testid="submit-login-button">
                   Sign in
                 </Button>
               </AnimateButton>

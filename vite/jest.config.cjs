@@ -14,4 +14,5 @@ module.exports = {
     "^.+\\.(js|jsx|ts|tsx)$": "babel-jest", 
     ".+\\.(css|less|sass|scss|png|jpg|gif|ttf|woff|woff2|svg)$": "jest-transform-stub",
   },
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.js', '<rootDir>/src/setupTests.js'],
 };
