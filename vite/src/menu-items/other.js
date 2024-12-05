@@ -2,8 +2,9 @@
 import { IconBrandChrome, IconHelp } from '@tabler/icons-react';
 // assets
 import DeblurIcon from '@mui/icons-material/Deblur';
+import CategoryIcon from '@mui/icons-material/Category';
 // constant
-const icons = { IconBrandChrome, IconHelp, DeblurIcon };
+const icons = { IconBrandChrome, IconHelp, DeblurIcon, CategoryIcon };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
@@ -24,7 +25,7 @@ const other = {
       title: 'Categories',
       type: 'item',
       url: '/chuck-norris-categories',
-      icon: icons.DeblurIcon,
+      icon: icons.CategoryIcon,
       breadcrumbs: false
     },
     {
