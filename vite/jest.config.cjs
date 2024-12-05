@@ -19,6 +19,9 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/index.jsx',
+    '!src/reportWebVitals.js',
+    '!src/config.js',
+    '!src/*.{.d.js,.test.js,.test.jsx,.spec.js,.spec.jsx}',
     '!**/node_modules/**',
   ],
   coverageDirectory: 'coverage',
