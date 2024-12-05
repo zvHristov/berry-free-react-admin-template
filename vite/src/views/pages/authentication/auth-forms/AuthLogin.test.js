@@ -16,6 +16,7 @@ beforeAll(() => {
         getItem: jest.fn(),
         removeItem: jest.fn(),
         clear: jest.fn(),
+        store: {},
     };
 });
  // Clear mocks before each test
@@ -47,7 +48,7 @@ describe('Login', () => {
         });
     });
 });
-describe('Login Authentication', () => {
+describe('Login Authentication navigation', () => {
     test('should not submit login form with invalid credentials', async () => {
 
         render(
@@ -98,5 +99,57 @@ describe('Login Authentication', () => {
             expect(global.alert).not.toHaveBeenCalled();
         });
       
+    });
+});
+describe('Login Authentication', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+      })
+    test('should not submit login form with invalid credentials', async () => {
+
+        render(
+            <MemoryRouter>
+                <Provider store={store}>
+                    <AuthLogin />
+                </Provider>
+            </MemoryRouter>
+        );
+
+        const usernameInput = screen.getByRole('textbox', { name: /email address \/ username/i });
+        const passwordInput = screen.getByLabelText('Password');
+        const submitButton = screen.getByTestId('submit-login-button');
+ 
+        await act(async () => {
+            fireEvent.change(usernameInput, { target: { value: 'test@example.com' } });
+            fireEvent.change(passwordInput, { target: { value: 'password' } });
+            fireEvent.click(submitButton); 
+        });
+
+        await waitFor(async () => {
+            expect(global.alert).toHaveBeenCalledWith('Invalid username or password');
+        });
+
+    });
+
+    test('should submit login form with valid credentials', async () => {
+
+        render(
+            <MemoryRouter>
+                <Provider store={store}>
+                    <AuthLogin />
+                </Provider>
+            </MemoryRouter>
+        );
+
+        const usernameInput = screen.getByRole('textbox', { name: /email address \/ username/i });
+        const passwordInput = screen.getByLabelText('Password');
+        const submitButton = screen.getByTestId('submit-login-button');
+    
+        await act(async () => {
+            fireEvent.change(usernameInput, { target: { value: 'admin@admin.com' } });
+            fireEvent.change(passwordInput, { target: { value: 'password' } });
+            fireEvent.click(submitButton); 
+            global.localStorage.setItem('isAuthenticated', 'true')
+        });
     });
 });

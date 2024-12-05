@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { fetcher } from 'utils/axios';
+import React ,{ useEffect, useState } from 'react';
+import { fetcher } from 'utils/fetcher';
 // project imports //
 import Grid from '@mui/material/Grid';
 import MainCard from 'ui-component/cards/MainCard';

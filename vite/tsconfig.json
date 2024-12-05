@@ -1,20 +1,27 @@
 {
     "compilerOptions": {
       "target": "esnext",
-      "module": "esnext",
+      "module": "ESNext",
       "jsx": "react-jsx",
+      "composite": true,
+      "moduleResolution": "Node",
+      "allowSyntheticDefaultImports": true,
       "baseUrl": ".",
       "paths": {
         "ui-component/*": ["src/ui-component/*"],
         "assets/*": ["src/assets/*"],
         "views/*": ["src/views/*"],
+        "utils/*": ["src/utils/*"],
         "@/*": ["src/*"]
       },
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
+      "forceConsistentCasingInFileNames": true,
+      "types": [
+          "node"
+        ]
     },
-    "include": ["src/**/*"],
+    "include": ["vite.config.mjs"],
     "exclude": ["node_modules"]
   }

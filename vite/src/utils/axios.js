@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const axiosServices = axios.create({ baseURL: import.meta.env.VITE_APP_API_URL || 'http://localhost:3000/' });
+const axiosServices = axios.create({ 
+  
+    baseURL: 'https://api.chucknorris.io/' ||
+     'http://localhost:3056/v3/api/' });
 // ==============================|| AXIOS - FOR MOCK SERVICES ||============================== //
 
 axiosServices.interceptors.request.use(
@@ -27,11 +30,3 @@ axiosServices.interceptors.response.use(
 );
 
 export default axiosServices;
-
-export const fetcher = async (args) => {
-    const [url, config] = Array.isArray(args) ? args : [args];
-
-    const res = await axiosServices.get(url, { ...config });
-
-    return res.data;
-};

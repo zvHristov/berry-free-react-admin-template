@@ -7,6 +7,8 @@ const { compilerOptions } = require("./tsconfig.json");
 module.exports = {
   roots: ["<rootDir>"],
   preset: "ts-jest",
+  "bail": 1,
+  "verbose": true,
   testEnvironment: "jsdom",
   modulePaths: [compilerOptions.baseUrl],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths ?? {}, { prefix: '<rootDir>/' }),
@@ -14,7 +16,8 @@ module.exports = {
     "^.+\\.(js|jsx|ts|tsx)$": "babel-jest", 
     ".+\\.(css|less|sass|scss|png|jpg|gif|ttf|woff|woff2|svg)$": "jest-transform-stub",
   },
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.js', '<rootDir>/src/setupTests.js'],
+  transformIgnorePatterns: ['node_modules/(?!(@mui|@emotion))'],
+  setupFilesAfterEnv: ['./src/setupTests.js'],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
