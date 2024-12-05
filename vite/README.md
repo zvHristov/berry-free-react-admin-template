@@ -31,7 +31,7 @@ You may also see any lint errors in the console.
 To run tests, run the following command
 
 ```bash
-  npm run test
+  npm test
   or
   yarn test
 ```
