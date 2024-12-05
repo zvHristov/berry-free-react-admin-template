@@ -3,14 +3,12 @@ import { fetcher } from 'utils/axios';
 // project imports //
 import Grid from '@mui/material/Grid';
 import MainCard from 'ui-component/cards/MainCard';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
 // ==============================|| Jock Categories PAGE ||============================== //
 
@@ -45,20 +43,25 @@ const JockCategories = () => {
     return (
         <MainCard title="Jock Categories List">
             <Grid container spacing={1}>
-            <Grid size={4}>
-                <List sx={{ bgcolor: 'background.paper' }}>
-                    {jockCategories.length !== 0 &&
-                    jockCategories.map((joke, index) => (
-                        <ListItem key={index} disablePadding>
-                            <ListItemButton onClick={() => handlingCategory(joke)}>
-                                <ListItemText primary={joke} />
-                            </ListItemButton>
-                        </ListItem>
+            {jockCategories.length !== 0 &&
+                        jockCategories.map((joke) => (
+                            <Stack 
+                                key={`${joke}-${Math.random()}`} 
+                                direction="row" 
+                                spacing={3} 
+                                alignItems="center"
+                            >
+                                <Chip 
+                                    label={joke} 
+                                    clickable
+                                    variant={`${randomCategory.categories.includes(joke) ? 'outlined' : ''}`}
+                                    size="small" 
+                                    sx={{ cursor: 'pointer' }} 
+                                    onClick={() => handlingCategory(joke)} 
+                                />
+                            </Stack>
                     ))}
-                </List>
-                </Grid>
-                <Grid size={8}>
-                {randomCategory.value !== '' && (
+            {randomCategory.value !== '' && (
                 <Card sx={{ bgcolor: 'background.paper' }}>
                     <CardContent>
                         <CardHeader
@@ -75,7 +78,6 @@ const JockCategories = () => {
                     </CardContent>
                 </Card>
                 )}
-                </Grid>
             </Grid>
         </MainCard>
       )
