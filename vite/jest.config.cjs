@@ -15,4 +15,19 @@ module.exports = {
     ".+\\.(css|less|sass|scss|png|jpg|gif|ttf|woff|woff2|svg)$": "jest-transform-stub",
   },
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.js', '<rootDir>/src/setupTests.js'],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/index.jsx',
+    '!**/node_modules/**',
+  ],
+  coverageDirectory: 'coverage',
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    }
+  }
 };
