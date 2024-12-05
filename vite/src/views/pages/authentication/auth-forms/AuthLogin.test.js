@@ -1,5 +1,4 @@
 import React from 'react';
-import '@testing-library/jest-dom';
 //test auth login
 import { render, screen, fireEvent, act, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
