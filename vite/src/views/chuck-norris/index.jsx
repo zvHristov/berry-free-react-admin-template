@@ -23,7 +23,7 @@ const JockPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetcher('/jokes/random');
+            const response = await fetcher(`/jokes/random`);
             setJoke(response);
         };
         fetchData();

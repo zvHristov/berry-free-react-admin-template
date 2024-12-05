@@ -14,10 +14,12 @@ const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
 // const UtilsMaterialIcons = Loadable(lazy(() => import('views/utilities/MaterialIcons')));
 // const UtilsTablerIcons = Loadable(lazy(() => import('views/utilities/TablerIcons')));
 
-// sample page routing
-const SamplePage = Loadable(lazy(() => import('views/sample-page')));
+// custom page routing
+const CustomPage = Loadable(lazy(() => import('views/custom-page')));
 // Jock Page page routing
 const JockPage = Loadable(lazy(() => import('views/chuck-norris')));
+// Jock Categories Page page routing
+const JockCategoriesPage = Loadable(lazy(() => import('views/chuck-norris-categories')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -84,8 +86,12 @@ const MainRoutes = {
     //   ]
     // },
     {
-      path: 'sample-page',
-      element: <SamplePage />
+      path: 'custom-page',
+      element: <CustomPage />
+    },
+    {
+      path: 'chuck-norris-categories',
+      element: <JockCategoriesPage />
     },
     {
       path: 'chuck-norris',

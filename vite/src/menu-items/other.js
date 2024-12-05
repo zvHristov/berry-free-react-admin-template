@@ -1,8 +1,9 @@
 // assets
 import { IconBrandChrome, IconHelp } from '@tabler/icons-react';
-
+// assets
+import DeblurIcon from '@mui/icons-material/Deblur';
 // constant
-const icons = { IconBrandChrome, IconHelp };
+const icons = { IconBrandChrome, IconHelp, DeblurIcon };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
@@ -11,10 +12,26 @@ const other = {
   type: 'group',
   children: [
     {
-      id: 'sample-page',
-      title: 'Sample Page',
+      id: 'chuck-norris',
+      title: 'Random Joke',
       type: 'item',
-      url: '/sample-page',
+      url: '/chuck-norris',
+      icon: icons.DeblurIcon,
+      breadcrumbs: false
+    },
+    {
+      id: 'chuck-norris-categories',
+      title: 'Categories',
+      type: 'item',
+      url: '/chuck-norris-categories',
+      icon: icons.DeblurIcon,
+      breadcrumbs: false
+    },
+    {
+      id: 'custom-page',
+      title: 'Custom Page',
+      type: 'item',
+      url: '/custom-page',
       icon: icons.IconBrandChrome,
       breadcrumbs: false
     },
