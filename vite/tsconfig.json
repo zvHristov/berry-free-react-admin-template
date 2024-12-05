@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "jsx": "react-jsx",
+      "baseUrl": ".",
+      "paths": {
+        "ui-component/*": ["src/ui-component/*"],
+        "assets/*": ["src/assets/*"],
+        "views/*": ["src/views/*"],
+        "@/*": ["src/*"]
+      },
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+  }
