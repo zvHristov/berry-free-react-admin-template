@@ -43,7 +43,7 @@ const JockCategories = () => {
                 const response = await fetcher(`/jokes/categories`);
                 setJockCategories(response);
             } catch (error) {
-                console.log(error, 'error');
+                setOpen(true);
             }
         };
         fetchData();
@@ -95,7 +95,7 @@ const JockCategories = () => {
                 open={open} 
                 maxWidth="xs"
             >
-                <DialogTitle>No Category Found</DialogTitle>
+                <DialogTitle data-testid="dialog-title-test-id">No Category Found</DialogTitle>
             </Dialog>
         </MainCard>
       )

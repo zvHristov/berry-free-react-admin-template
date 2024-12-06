@@ -21,7 +21,7 @@ const JockPage = () => {
         value: '',
     });
     const [open, setOpen] = useState(false);
-    
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -32,7 +32,7 @@ const JockPage = () => {
                 const response = await fetcher(`/jokes/random`);
                 setJoke(response);
             } catch (error) {
-                console.log(error, 'error');
+              setOpen(true);
             }
         };
         fetchData();
