@@ -14,7 +14,7 @@ This project is an experimental implementation based on [Berry React Material Ad
 
 ### Authentication
 - Static authentication system with predefined credentials:
-  - Username: `admin`
+  - Username: `admin@admin.com`
   - Password: `password`
 - Session management using localStorage
 - Protected routes
