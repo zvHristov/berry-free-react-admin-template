@@ -3,7 +3,7 @@
 The authentication system implements the following flow:
 
 1. Login Verification
- Checks credentials against predefined values: admin@admin.com and password
+ Checks credentials against predefined values: Username: `admin` and Password: `password`
 
 # Getting Started with Create React App
 

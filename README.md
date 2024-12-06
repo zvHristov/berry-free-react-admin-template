@@ -1,3 +1,42 @@
+## 
+
+## Overview
+This project is an experimental implementation based on [Berry React Material Admin Template](https://mui.com/store/items/berry-react-material-admin-free/). It serves as a demonstration of working with Material UI documentation, implementing authentication, creating custom pages, and integrating external APIs.
+
+## Project Goals
+- Demonstrate proficiency with Berry Admin Template and Material UI
+- Implement basic authentication system
+- Create custom pages and components
+- Integrate external API resources
+- Apply unit testing best practices
+
+## Features
+
+### Authentication
+- Static authentication system with predefined credentials:
+  - Username: `admin`
+  - Password: `password`
+- Session management using localStorage
+- Protected routes
+- Automatic redirect to login for unauthenticated users
+
+### Custom Pages
+- Extended the base template with new custom pages
+- Implemented responsive layouts using Material UI components
+- Integrated with template's existing styling and theming
+
+### External API Integration
+- Fetches dynamic resources from external API
+- Demonstrates data handling and state management
+- Shows loading states and error handling
+
+### Unit Testing
+- Comprehensive test coverage using Jest
+- Test cases for authentication flow
+- Coverage threshold set at 80%
+- Excludes configuration files from coverage reports
+
+
 # Berry Free React Material UI Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20Berry%20React%20-%20The%20most%20beautiful%20Material%20designed%20Admin%20Dashboard%20Template%20&url=https://berrydashboard.io&via=codedthemes&hashtags=reactjs,webdev,developers,javascript)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -71,10 +110,37 @@ Berry offers everything you need to create dashboards. We have included the foll
 Clone from Github
 
 ```
-git clone https://github.com/codedthemes/berry-free-react-admin-template.git
+git clone https://github.com/zvHristov/berry-free-react-admin-template.git
 ```
 
 ## Documentation
+
+-   Go to vite folder
+
+```
+cd vite
+```
+# Install dependencies
+
+```bash
+  npm install
+  or
+  yarn
+```
+
+# Start the development server
+```bash
+  npm start
+  or
+  yarn start
+```
+# Run tests
+```bash
+  npm test
+  or
+  yarn test
+```
+
 
 [Berry documentation](https://codedthemes.gitbook.io/berry/) helps you with installation, deployment, and troubleshooting.
 
