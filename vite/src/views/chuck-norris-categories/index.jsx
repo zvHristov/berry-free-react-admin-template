@@ -9,6 +9,8 @@ import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
 
 // ==============================|| Jock Categories PAGE ||============================== //
 
@@ -24,10 +26,15 @@ const JockCategories = () => {
         url: '',
         value: '',
     });
+    const [open, setOpen] = useState(false);
 
     const handlingCategory = async category => {
         const response = await fetcher(`/jokes/random?category=${category}`);
         setRandomCategory(response);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
     };
 
     useEffect(() => {
@@ -76,11 +83,20 @@ const JockCategories = () => {
                             }
                             title={randomCategory.value}
                             subheader={randomCategory.created_at}
+                            data-testid="category-title-test-id"
                         />
                     </CardContent>
                 </Card>
                 )}
             </Grid>
+            <Dialog 
+                onClose={handleClose}
+                data-testid="category-dialog-test-id"
+                open={open} 
+                maxWidth="xs"
+            >
+                <DialogTitle>No Category Found</DialogTitle>
+            </Dialog>
         </MainCard>
       )
 };

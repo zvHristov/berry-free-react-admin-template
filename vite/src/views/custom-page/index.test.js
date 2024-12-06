@@ -6,23 +6,19 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from '../../store/reducer';
-import JockCategories from './index';
+import CustomPage from './index';
 
 const store = createStore(reducer);
-jest.mock('axios'); 
 
-test('should render JockCategories Page', async () => {
+test('should render CustomPage Page', () => {
     //Arrange
     render(
         <MemoryRouter>
             <Provider store={store}>
-                <JockCategories />
+                <CustomPage />
             </Provider>
         </MemoryRouter>
     );
-
-    await waitFor(() => {
-        screen.logTestingPlaygroundURL();
-      });
-    expect(screen.getByText('Jock Categories List')).toBeInTheDocument();
+    
+    expect(screen.getByText('Custom Card')).toBeInTheDocument();
 });
