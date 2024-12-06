@@ -21,6 +21,8 @@ test('should render JockCategories Page', async () => {
             </Provider>
         </MemoryRouter>
     );
-   
+    await waitFor(() => {
+        screen.logTestingPlaygroundURL();
+      });
     expect(screen.getByText('Jock Categories List')).toBeInTheDocument();
 });
